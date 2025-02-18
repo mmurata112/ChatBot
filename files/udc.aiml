@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+  <category>
+    <pattern>*</pattern>
+    <template>Hello! I am the WGU Career Bot and i'm here to help you decide which career is best suited for you!<br/>
+    <br/>Can I please have your name? (Please type "My name is __")
+    </template>
+  </category>
+  
+  <category>
+      <pattern>MY NAME IS *</pattern>
+      <template>
+          Hello <formal><set name="name"><star/></set></formal>! Let's get started.<br/>
+          <br/>Do you enjoy coding and problem solving?
+          <reply>
+              <text>Yes</text>
+              <postback>YESCODING</postback>
+          </reply>
+          <reply>
+              <text>No</text>
+              <postback>NOCODING</postback>
+          </reply>
+      </template>
+  </category>
+  
+  <category>
+      <pattern>YESCODING</pattern>
+      <template>Would you like to work on the visual and interactive aspects of apps?
+      <reply>
+          <text>Yes</text>
+          <postback>FRONTEND</postback>
+      </reply>
+      <reply>
+          <text>No</text>
+          <postback>BACKEND</postback>
+      </reply>
+      </template>
+  </category>
+  
+    <category>
+      <pattern>FRONTEND</pattern>
+      <template>
+          With your interest in user design and interface, Front-end developer would be a great fit!<br/>
+          <button>
+              <text>Click here to learn more about being a Front-End Developer</text>
+              <url>https://www.bls.gov/ooh/computer-and-information-technology/web-developers.htm</url>
+          </button>
+          <button>
+              <text>Start Over</text>
+              <postback>MY NAME IS <get name="name"/></postback>
+          </button>
+      </template>
+  </category>
+  
+  <category>
+      <pattern>BACKEND</pattern>
+      <template>
+          You'd rather work on how an app runs rather than how it looks. Back-End Developer seems perfect!<br/>
+          <button>
+              <text>Learn about becoming a Back-End Developer</text>
+              <url>https://www.bls.gov/ooh/computer-and-information-technology/software-developers.htm#tab-2</url>
+          </button>
+          <button>
+              <text>Start Over</text>
+              <postback>MY NAME IS <get name="name"/></postback>
+          </button>
+      </template>
+  </category>
+  
+  <category>
+      <pattern>NOCODING</pattern>
+      <template>
+          Since you don't like to code, choose the statement that best fits you.<br/>
+          <button>
+              <text>I'm interested in working with data to uncover trends and patterns.</text>
+              <postback>DATA</postback>
+          </button>
+          <button>
+              <text>I'm interested in the overall computer system and it's performance and efficiency.</text>
+              <postback>SYSTEM</postback>
+          </button>
+          <button>
+              <text>I'm interested in protecting computer systems from cyberthreats.</text>
+              <postback>CYBER</postback>
+          </button>
+      </template>
+  </category>
+  
+  <category>
+      <pattern>DATA</pattern>
+      <template>
+          Data scientist would be the career i would push you towards!
+          <button>
+              <text>Learn more about becoming a Data Scientist</text>
+              <url>https://www.bls.gov/ooh/math/data-scientists.htm#tab-2</url>
+          </button>
+          <button>
+              <text>Start Over</text>
+              <postback>MY NAME IS <get name="name"/></postback>
+          </button>
+      </template>
+  </category>
+  
+  <category>
+      <pattern>SYSTEM</pattern>
+      <template>
+          Overlooking the whole system means a career as a System's Analyst would be ideal!
+          <button>
+              <text>Learn about becoming a Systems Analyst</text>
+              <url>https://www.bls.gov/ooh/computer-and-information-technology/computer-systems-analysts.htm#tab-1</url>
+          </button>
+          <button>
+              <text>Start Over</text>
+              <postback>MY NAME IS <get name="name"/></postback>
+          </button>
+      </template>
+  </category>
+  
+  <category>
+      <pattern>CYBER</pattern>
+      <template>
+          Data Protection is a top priority.  The ideal career for you is Cybersecurity analyst!
+          <button>
+              <text>Learn about becoming a Cybersecurity Analyst</text>
+              <url>https://www.bls.gov/ooh/computer-and-information-technology/information-security-analysts.htm#tab-1</url>
+          </button>
+          <button>
+              <text>Start Over</text>
+              <postback>MY NAME IS <get name="name"/></postback>
+          </button>
+      </template>
+  </category>
+
+</aiml>
